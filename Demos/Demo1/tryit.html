@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function toggleLight(x){
+            //alert(x.src);
+            if(x.src === "http://localhost:63342/Demo1/pic_bulboff.gif"){
+                x.src = "http://localhost:63342/Demo1/pic_bulbon.gif";
+            }
+            else if(x.src === "http://localhost:63342/Demo1/pic_bulbon.gif"){
+                x.src = "http://localhost:63342/Demo1/pic_bulboff.gif";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attributes.</p>
+
+<p>In this case JavaScript changes the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px" onclick="toggleLight(this);">
+
+    <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+
+</body>
+</html>
