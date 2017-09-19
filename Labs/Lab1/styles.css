@@ -7,29 +7,42 @@
     border-radius: 5px;
     border: 1px solid black;
 }
+
 #div1{
     margin-top:25px;
     margin-left: 25px;
     background-color: lightcoral;
-    z-index: 0;
 }
+
 #div2 {
     margin-top: 75px;
     margin-left: 100px;
     background-color: lightblue;
-    opacity: 0.5;
+    margin-bottom: 200px;
 }
+
 .back{
     z-index: -1;
+    opacity: 0.5;
 }
+
 .front{
     z-index: 1;
+    opacity: 1;
 }
+
 .content{
     height: 0;
+}
+
+.slider{
+    background-color: lightgoldenrodyellow;
+}
+
+.content, .slider{
     width: 400px;
 }
 
 #accordion{
-    margin-top: 200px;
+    display: inline-block;
 }
