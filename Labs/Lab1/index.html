@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 1</title>
+    <style>
+        #div1, #div2{
+            position: absolute;
+            height: 75px;
+            width: 125px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        #div1{
+            margin-top:25px;
+            margin-left: 25px;
+            background-color: lightcoral;
+            z-index: 0;
+        }
+        #div2 {
+            margin-top: 75px;
+            margin-left: 100px;
+            background-color: lightblue;
+        }
+        .back{
+            z-index: -1;
+        }
+        .front{
+            z-index: 1;
+        }
+    </style>
+    <script>
+        function pushToBack(x){
+            if(x.className = "front"){
+                x.className = "back";
+            }
+        }
+        function pushToFront(x){
+            if(x.className = "back"){
+                x.className = "front";
+            }
+        }
+        function toggleClass(){
+            //alert(x.className);
+            var d1 = document.getElementById("div1");
+            var d2 = document.getElementById("div2");
+            if(x.className == "front"){
+                x.className = "back";
+            }
+            else if(x.className == "back"){
+                x.className = "front";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Lab 1 Results</h1>
+    <div id="div1" class="front" ondblclick="toggleClass()"></div>
+    <div id="div2" class="back" ondblclick="toggleClass()"></div>
+</body>
+</html>
