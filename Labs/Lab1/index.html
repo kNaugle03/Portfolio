@@ -23,6 +23,7 @@
             margin-top: 75px;
             margin-left: 100px;
             background-color: lightblue;
+            opacity: 0.5;
         }
         .back{
             z-index: -1;
@@ -31,33 +32,12 @@
             z-index: 1;
         }
     </style>
-    <script>
-        function pushToBack(x){
-            if(x.className = "front"){
-                x.className = "back";
-            }
-        }
-        function pushToFront(x){
-            if(x.className = "back"){
-                x.className = "front";
-            }
-        }
-        function toggleClass(){
-            //alert(x.className);
-            var d1 = document.getElementById("div1");
-            var d2 = document.getElementById("div2");
-            if(x.className == "front"){
-                x.className = "back";
-            }
-            else if(x.className == "back"){
-                x.className = "front";
-            }
-        }
-    </script>
 </head>
 <body>
     <h1>Lab 1 Results</h1>
     <div id="div1" class="front" ondblclick="toggleClass()"></div>
     <div id="div2" class="back" ondblclick="toggleClass()"></div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
