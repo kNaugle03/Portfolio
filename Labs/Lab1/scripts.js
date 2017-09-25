@@ -15,6 +15,7 @@
 document.getElementById("div1").addEventListener("dblclick", toggleClass);
 document.getElementById("div2").addEventListener("dblclick", toggleClass);
 
+
 function toggleClass(){
     var d1 = document.getElementById("div1");
     var d2 = document.getElementById("div2");
@@ -46,3 +47,17 @@ function toggleAccordion(){
         this.parentNode.className = "slide open";
     }
 }
+
+
+var imgs = document.getElementsByClassName("img");
+var count = 0;
+var timer = setInterval(function(){
+    for(var i=0;i<imgs.length;i++){
+        imgs[i].className = "img back"
+    }
+    imgs[count].className = "img front";
+    count++;
+    if(count == imgs.length){
+        count = 0;
+    }
+}, 5000);
