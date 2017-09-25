@@ -7,22 +7,42 @@
 </head>
 <body>
     <h1>Lab 1 Results</h1>
-    <div id="div1" class="front" ondblclick="toggleClass()"></div>
-    <div id="div2" class="back" ondblclick="toggleClass()"></div>
-    <div id="accordion">
-        <h2 class="slider">Slide 1</h2>
-        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
-            vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
-        <h2 class="slider">Slide 2</h2>
-        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
-            vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
-        <h2 class="slider">Slide 3</h2>
-        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
-            vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
-        <h2 class="slider">Slide 4</h2>
-        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
-            vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
-    </div>
+    <!--PART 1-->
+    <div id="div1" class="front"></div>
+    <div id="div2" class="back"></div>
+    <!-- PART 2 -->
+    <div id="accordion-wrapper">
+        <div class="slide closed">
+            <h2 class="accordion-heading">Slide 1</h2>
+            <div class="slide-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
+                vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
+            </div>
+        </div>
+        <div class="slide closed">
+            <h2 class="accordion-heading">Slide 2</h2>
+            <div class="slide-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
+                    vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
+            </div>
+        </div>
+        <div class="slide closed">
+            <h2 class="accordion-heading">Slide 3</h2>
+            <div class="slide-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
+                    vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
+            </div>
+        </div>
+        <div class="slide closed">
+            <h2 class="accordion-heading">Slide 4</h2>
+            <div class="slide-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum pulvinar magna,
+                    vel aliquam libero pellentesque vel. Donec nec rhoncus quam.</p>
+            </div>
+        </div>
+    </div> <!-- END ACCORDION-->
+    <!--PART 3-->
+
     <script src="scripts.js"></script>
 </body>
 </html>
