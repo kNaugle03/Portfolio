@@ -89,3 +89,10 @@
 .img{
     position: absolute;
 }
+
+.img h2{
+    position: fixed;
+    margin-top: 0;
+    padding-left: 175px;
+    text-shadow: 2px 2px white;
+}
