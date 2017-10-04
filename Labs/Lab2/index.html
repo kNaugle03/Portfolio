@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Lab 2</title>
+    <style>
+        #errorMessage{
+            color: red;
+            text-transform: uppercase;
+            visibility: hidden;
+        }
+        #students{
+            margin-top: 40px;
+            position: relative;
+            width: 30%;
+        }
+        #hidden{
+            clear: both;
+            visibility: hidden;
+            /*margin-top: -50px;*/
+            top: 30%;
+            z-index: 2;
+            position: absolute;
+            color: blue;
+            background-color: lightgray;
+            border: 1px solid black;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Student Form</h1>
+    <form id="theForm">
+        <p><label>Student ID:
+            <input type="text" name="id" id="id">
+        </label><span id="errorMessage">This student id is already in use.</span></p>
+        <p><label>First Name:
+            <input type="text" name="fName" id="fName">
+        </label></p>
+        <p><label>Last Name:
+            <input type="text" name="lName" id="lName">
+        </label></p>
+        <input type="button" id="submit" value="Add Student">
+    </form>
+    <div id="students">
+        <ul id="studentList">
+
+        </ul>
+    </div>
+    <div id="hidden">
+        <ul id="jsonList">
+
+        </ul>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
