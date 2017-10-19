@@ -2,12 +2,12 @@
     "use strict";
 
     var colorArray = new Array(6);
-    var defaultColors = [[2,0,0,0,2,0],
-                         [2,0,1,0,0,0],
-                         [0,0,1,0,0,1],
-                         [0,1,0,0,0,1],
+    var defaultColors = [[2,0,0,0,0,0],
+                         [0,1,0,0,0,0],
                          [0,0,2,0,2,0],
-                         [0,0,0,0,0,0]];
+                         [0,0,0,0,0,1],
+                         [0,1,0,2,0,1],
+                         [0,0,0,2,0,0]];
     var correctArray = [[],[],[],[],[],[]];
 
     // creating the 2D array and populating them with Shape objects
@@ -42,7 +42,7 @@
 
     //define my square object
     function Square(c){
-        this.colors = ["gray, purple, green"];
+        this.colors = ["lightgray", "purple", "green"];
         this.currentColor = this.colors[c];
         this.index = 0;
 
