@@ -24,13 +24,14 @@
             color: red;
             visibility: hidden;
         }
-        #msg1, #msg2, #msg3{
+        #msg1, #msg2, #msg3, #msg4, #play-again{
             display: none;
         }
     </style>
 </head>
     <body>
         <h1>3 In A Row - Assignment 1</h1>
+        <!--<input type="button" id="finish" value="CHECK FINISH FUNCTION" >-->
         <div id="table-wrapper">
 
         </div>
@@ -39,8 +40,11 @@
                 <p><input type="button" id="check-puzzle" value="Check Puzzle"></p>
                 <p><span id="msg1">So far so good</span>
                     <span id="msg2">Something is wrong...</span>
-                    <span id="msg3">Puzzle is complete and correct!</span></p>
-                <p><label>Show Incorrect: </label><input type="checkbox" id="show-incorrect"></p>
+                    <span id="msg3">Puzzle is complete and correct! !!!YOU WIN!!!</span></p>
+                    <span id="msg4">!!!YOU WIN!!!</span></p>
+                <p><label id="inc-label">Show Incorrect: </label><input type="checkbox" id="show-incorrect"></p>
+                <p><input type="button" id="give-up" value="Give Up?"></p>
+                <p><input type="button" id="play-again" value="Play Again?"></p>
             </form>
         </div>
         <script src="scripts.js" type="text/javascript"></script>
