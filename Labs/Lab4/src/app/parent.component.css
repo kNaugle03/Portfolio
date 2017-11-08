@@ -1,0 +1,10 @@
+.parent{
+  margin: 0 auto;
+  background-color: dodgerblue;
+  color: white;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  height: 400px;
+  width: 400px;
+}

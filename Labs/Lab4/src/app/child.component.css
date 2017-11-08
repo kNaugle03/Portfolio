@@ -1,0 +1,9 @@
+.child{
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;
+  padding-top: 5px;
+  padding-left: 20px;
+  background-color: limegreen;
+  color: white;
+}
