@@ -4,6 +4,8 @@ import {ParentComponent} from "./parent1.component";
 import {ParentComponent2} from "./parent2.component";
 import {DashboardComponent} from "./dashboard.component";
 import {ParentComponent3} from "./parent3.component";
+import {SiblingComponent} from "./sibling.component";
+import {Sibling2Component} from "./sibling2.component";
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full"},
@@ -11,6 +13,7 @@ const routes: Routes = [
   {path: "parent1", component: ParentComponent},
   {path: "parent2", component: ParentComponent2},
   {path: "parent3", component: ParentComponent3},
+  {path: "sibling", component: Sibling2Component},
 
 
 ];

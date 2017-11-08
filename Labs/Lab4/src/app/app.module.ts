@@ -10,6 +10,10 @@ import {AppRoutingModule} from "./app-routing.module";
 import {DashboardComponent} from "./dashboard.component";
 import {ChildComponent3} from "./child3.component";
 import {ParentComponent3} from "./parent3.component";
+import {SiblingComponent} from "./sibling.component";
+import {Sibling2Component} from "./sibling2.component";
+import {DataService} from "./data.service";
+import {ChildComponent4} from "./child4.component";
 
 @NgModule({
   imports: [
@@ -23,10 +27,14 @@ import {ParentComponent3} from "./parent3.component";
     ChildComponent2,
     ParentComponent2,
     ChildComponent3,
+    ChildComponent4,
     ParentComponent3,
+    SiblingComponent,
+    Sibling2Component,
     DashboardComponent,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

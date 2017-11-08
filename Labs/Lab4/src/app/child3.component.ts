@@ -6,7 +6,6 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
       <div class="child">
         <h3>Child</h3>
         Say {{ message }}
-        <button (click)="sendMessage()">Send Message</button>
       </div>
   `,
   styleUrls: ['./child.component.css']
@@ -14,7 +13,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class ChildComponent3 {
   // @Input() message: string;
 
-  message: string = "Hola Mundo!";
+  message: string = "Hola Mundo From Child!";
 
   @Output() messageEvent = new EventEmitter<string>();
 

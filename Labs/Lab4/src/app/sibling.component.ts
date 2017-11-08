@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import {ChildComponent3} from "./child3.component";
+import { Component, OnInit } from '@angular/core';
+import {DataService} from "./data.service";
 
 @Component({
   selector: 'app-sibling',
@@ -7,25 +7,19 @@ import {ChildComponent3} from "./child3.component";
     <div class="parent">
       <h1>Parent</h1>
       Message: {{ message }}
-      <app-child3 (messageEvent)="receiveMessage($event)"></app-child3>
+      <app-child4></app-child4>
     </div>
   `,
   styleUrls: ['./parent.component.css']
 })
-export class SiblingComponent implements AfterViewInit{
+export class SiblingComponent implements OnInit{
 
-  @ViewChild(ChildComponent3) child;
+  message: string;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
-  message:string = "Hello World";
-
-  ngAfterViewInit(){
-    setTimeout(() => this.message = this.child.message)
-  }
-
-  receiveMessage($event){
-    this.message = $event
+  ngOnInit(){
+    this.data.currentMessage.subscribe(message => this.message = message)
   }
 
 }
