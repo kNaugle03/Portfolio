@@ -1,0 +1,9 @@
+<div class="panel-heading">Selected Episode Details</div>
+<div id="panel" *ngIf="episode">
+  <div><h4>Season {{episode.season}} - Episode {{episode.number}}</h4></div>
+  <div><img *ngIf="episode.image" src="{{episode.image.medium}}" /></div>
+  <div *ngIf="episode.name?.length > 0"><h4>{{episode.name}}</h4></div>
+  <div *ngIf="episode.summary?.length > 0" [innerHtml]="episode.summary"></div>
+  <div *ngIf="episode.airdate?.length > 0"><label>Original Airdate:</label> {{episode.airdate | date:'longDate'}}</div>
+  <div *ngIf="episode.runtime > 0"><label>Duration:</label> {{episode.runtime}} Minutes</div>
+</div>

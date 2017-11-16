@@ -1,0 +1,20 @@
+header, footer {
+  margin: 1px;
+  border-color: #8888bb;
+  background-color: white;
+}
+article, nav {
+  margin: 1px;
+  border: 1px solid;
+  border-color: #8888bb;
+  background-color: white;
+}
+footer {
+  text-align: center;
+}
+#resizable_container {
+  height: calc(100vh - 82px);
+}
+app-shows-display {
+  height: 100%;
+}

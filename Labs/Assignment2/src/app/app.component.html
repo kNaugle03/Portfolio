@@ -1,0 +1,33 @@
+<div class="containerX">
+  <div class="colorNested box" fxLayout="column">
+
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <img height="25px" src="https://static.tvmaze.com/images/tvm-header-logo.png" />
+            </a>
+          </div>
+          <ul class="nav navbar-nav">
+
+            <!-- TODO: Make links work with some routing so that we can toggle between displaying shows & people-->
+            <li ><a routerLink="/shows">Shows</a></li>
+            <li ><a routerLink="/people">People</a></li>
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div id="resizable_container">
+      <!-- TODO: this will need to be modified to be able to handle switching between shows and people -->
+      <router-outlet></router-outlet> <!-- contains the four display panels/components for showsList-list -->
+    </div>
+
+    <footer>
+      Data courtesy of <a href="http://www.tvmaze.com/api" target="_blank">TVMaze API</a>
+    </footer>
+
+  </div>
+</div>

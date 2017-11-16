@@ -1,0 +1,36 @@
+<ngx-loading [show]="loading"></ngx-loading>
+<div class="panel-default panel-heading">List of People <span *ngIf="personList?.length > 0">({{ personList.length }})</span></div>
+<div class="panel-default">
+
+  <form action="" class="search-form">
+    <div class="form-group has-feedback">
+      <label for="search" class="sr-only">Search</label>
+      <input #searchBox (keyup)="searchPeople(searchBox.value)" type="text" class="form-control" name="search" id="search" placeholder="Search People...">
+      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    </div>
+  </form>
+
+</div>
+
+<div id="person-container">
+
+  <!-- display this div if searchShows resulted in one or more results found -->
+  <div *ngIf="personList?.length > 0" class="list-group">
+
+    <!-- TODO: These links work now...but you may want to consider -->
+    <!-- TODO: how you'll need to modify them once some form of routing is implemented -->
+    <a routerLink="/people" class="list-group-item"
+       *ngFor="let person of personList"
+       (click)="onSelect(person)"
+       [class.active]="person === selectedPerson">
+      {{person.name}}
+
+    </a>
+
+  </div>
+
+  <!-- display this div if searchShows was entered but no results were returned -->
+  <div *ngIf="personList?.length === 0 && searchBox.value.length > 0" class="list-group">
+    <span style="padding: 15px; font-style: italic">No Results Found</span>
+  </div>
+</div>

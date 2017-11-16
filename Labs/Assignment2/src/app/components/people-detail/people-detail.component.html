@@ -1,0 +1,72 @@
+<div class="panel-heading">Selected Show Details</div>
+<div id="panel" #panel *ngIf="show;else select_from_list">
+
+  <!-- This section is responsible for displaying details about the selected show -->
+  <div fxLayout="row" id="top" #top>
+    <div *ngIf="show.image" style="padding-right: 15px;"><img src="{{show.image.medium}}" /></div>
+    <div>
+      <h2>{{show.name}}</h2>
+      <h4 *ngIf="show.network">{{show.network.name}} <span *ngIf="show.network.country?.name">({{show.network.country.name}})</span></h4>
+      <h4 *ngIf="show.webChannel">{{show.webChannel.name}} <span *ngIf="show.webChannel.country?.name" style="display:inline-block;">({{show.webChannel.country.name}})</span></h4>
+      <div *ngIf="show.premiered?.length > 0"><label>Premiered:</label> {{ show.premiered | date:'longDate' }}</div>
+      <div *ngIf="show.type?.length > 0"><label>Show Type:</label> {{ show.type }}</div>
+      <div *ngIf="show.genres?.length > 0"><label>Genres:</label> {{ show.genres.join(', ') }}</div>
+      <div *ngIf="show.language?.length > 0"><label>Language:</label> {{ show.language }}</div>
+      <div *ngIf="show.status?.length > 0"><label>Status:</label> {{ show.status }}</div>
+      <div *ngIf="show.officialSite?.length > 0"><a href="{{ show.officialSite }}" target="_blank">Official Site</a></div>
+      <div *ngIf="show.url?.length > 0"><a href="{{ show.url }}" target="_blank">View on TVMaze Site</a></div>
+    </div>
+  </div>
+  <div style="padding-top: 15px;" [innerHtml]="show.summary"></div>
+
+  <!-- this accordion is responsible for displaying any cast and crew information....if available -->
+  <accordion>
+
+    <!-- fill the cast list if any cast available -->
+    <accordion-group *ngIf="show._embedded.cast.length > 0" #cast>
+      <div accordion-heading>
+        <i class="pull-right float-xs-right glyphicon"
+           [ngClass]="{'glyphicon-minus': cast?.isOpen, 'glyphicon-plus': !cast?.isOpen}"></i>
+        <h4>Cast</h4>
+      </div>
+      <div id="cast" *ngFor="let castMember of show._embedded.cast; let last = last" class="castTable">
+        <div class="castTableRow">
+          <div class="castTableCell">
+            <img style="max-width: 80px;" *ngIf="castMember.person.image" src="{{ castMember.person.image.medium }}" />
+          </div>
+          <div class="castTableCell, castTableCellRight">
+            <span style="font-weight: bold;font-size:125%;display:block">{{ castMember.person.name }}</span>
+            <span style="font-style: italic;"> as {{ castMember.character.name }}</span>
+          </div>
+        </div>
+        <div *ngIf="!last" class="tableRowSpacer"></div>
+      </div>
+    </accordion-group>
+
+    <!-- fill the crew list if any crew available -->
+    <accordion-group *ngIf="show._embedded.crew.length > 0" #crew>
+      <div accordion-heading>
+        <i class="pull-right float-xs-right glyphicon"
+           [ngClass]="{'glyphicon-minus': crew?.isOpen, 'glyphicon-plus': !crew?.isOpen}"></i>
+        <h4>Crew</h4>
+      </div>
+      <div *ngFor="let crewMember of show._embedded.crew">
+        <div style="margin-bottom: 3px;">
+          <img style="max-width: 80px;" *ngIf="crewMember.person.image" src="{{ crewMember.person.image.medium }}" />
+          <span style="font-weight: bold;font-size:115%;">{{ crewMember.person.name }}</span>
+          <span style="font-style: italic"> {{ crewMember.type }}</span>
+        </div>
+      </div>
+    </accordion-group>
+
+  </accordion>
+
+</div>
+
+<!-- this gets displayed in the event that a searchShows has yet to be performed and there are no searchShows results -->
+<!-- corresponds to the 'else' at the top of the page -->
+<ng-template #select_from_list>
+  <div id="panel" style="padding:10px;border: 0;">
+    <span style="font-style: italic"> <- Do a search in the box provided ...</span>
+  </div>
+</ng-template>

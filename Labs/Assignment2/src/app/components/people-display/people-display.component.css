@@ -1,0 +1,10 @@
+section {
+  margin: 1px;
+  border: 1px solid;
+  background-color: white;
+}
+
+section > div {
+  margin: 0px;
+  height: 100%;
+}

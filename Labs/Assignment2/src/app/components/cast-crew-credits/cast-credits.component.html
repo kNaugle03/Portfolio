@@ -1,0 +1,25 @@
+<div class="panel-heading">Episodes <span *ngIf="episodesList && currentShow">({{ episodesList.length }})</span></div>
+<div id="episodes-container" #episodesContainer>
+  <div *ngIf="episodesList"> <!-- null check -->
+
+    <!-- displays if there are episodes associated with the currently selected show -->
+    <div *ngIf="episodesList.length > 0" class="list-group">
+
+      <!-- TODO: These links work now...but you may want to consider -->
+      <!-- TODO: how you'll need to update them once routing is implemented -->
+      <a href="#" class="list-group-item" *ngFor="let episode of episodesList"
+         [class.active]="episode === selectedEpisode"
+         (click)="onSelect(episode)">
+        Season {{episode.season}} - Episode {{ episode.number }}
+      </a>
+
+    </div>
+
+    <!-- displays if a show has been selected but there are no episodes associated with it -->
+    <!-- (ie. episodes array is empty) -->
+    <div *ngIf="episodesList.length === 0 && currentShow">
+      <span style="padding: 25px; font-style: italic;">No Episodes Available</span>
+    </div>
+
+  </div>
+</div>

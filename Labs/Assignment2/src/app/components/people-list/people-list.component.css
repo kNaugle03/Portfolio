@@ -1,0 +1,10 @@
+.panel-heading {
+  background-color: #f5f5f5;
+}
+#person-container{
+  overflow-y: auto;
+  height: calc(100% - 80px);
+}
+.form-group {
+  margin-bottom: 5px;
+}
