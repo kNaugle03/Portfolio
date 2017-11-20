@@ -1,5 +1,5 @@
 <div class="panel-heading">Selected Show Details</div>
-<div id="panel" #panel *ngIf="show;else select_from_list">
+<div class="panel" #panel *ngIf="show;else select_from_list">
 
   <!-- This section is responsible for displaying details about the selected show -->
   <div fxLayout="row" id="top" #top>
@@ -66,7 +66,7 @@
 <!-- this gets displayed in the event that a searchShows has yet to be performed and there are no searchShows results -->
 <!-- corresponds to the 'else' at the top of the page -->
 <ng-template #select_from_list>
-  <div id="panel" style="padding:10px;border: 0;">
+  <div class="panel" style="padding:10px;border: 0;">
     <span style="font-style: italic"> <- Do a search in the box provided ...</span>
   </div>
 </ng-template>

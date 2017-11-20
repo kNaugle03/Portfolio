@@ -1,4 +1,4 @@
-import {  Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 
@@ -37,6 +37,17 @@ export class TVMazeService {
       .then(response => response.json() as Show) // when received, JSON response is converted to Show object
                                                            // this Show object contains additional episodes,
                                                            // cast and crew data
+      .catch(this.handleError);
+  }
+
+  // my attempt at re-using the existing function to make it work for person data
+  loadAdditionalPersonData(show: Show): Promise<Show> {
+    return this.http
+      .get(`${environment.apiRootUrl}/people/${show.id}?embed[]=shows&embed[]=cast&embed[]=crew`)
+      .toPromise()
+      .then(response => response.json() as Show) // when received, JSON response is converted to Show object
+      // this Show object contains additional episodes,
+      // cast and crew data
       .catch(this.handleError);
   }
 

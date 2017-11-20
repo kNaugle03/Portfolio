@@ -4,6 +4,7 @@ import { AccordionPanelComponent } from 'ngx-bootstrap'; // 3rd party package us
 import { Show } from '../../models/show';
 
 import { TVMazeService } from '../../services/tvmaze.service';
+import {Person} from "../../models/person";
 
 @Component({
   selector: 'app-people-detail',
@@ -16,7 +17,7 @@ export class PeopleDetailComponent implements OnInit {
   @ViewChild('panel') panel: ElementRef;
 
   // local variable to hold the currently selected show object
-  show: Show;
+  person: Person;
 
   // the tvMazeService gets injected into the component via the constructor
   constructor( private tvMazeService: TVMazeService ) { }
@@ -25,12 +26,12 @@ export class PeopleDetailComponent implements OnInit {
 
     // subscribe to the observable in the service to react to the changing of a show.
     // when the service notifies that the show has changed, run the showChanged method to update the component
-    this.tvMazeService.currentShow.subscribe(show => this.showChanged(show));
+    this.tvMazeService.currentPerson.subscribe(person => this.personChanged(person));
   }
 
-  showChanged(show: Show) {
+  personChanged(person: Person) {
     // update the local show variable to hold the newly selected one
-    this.show = show;
+    this.person = person;
 
     // reset any open accordion components to be re-closed
     if (this.cast) {

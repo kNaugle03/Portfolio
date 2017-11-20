@@ -4,6 +4,7 @@ import { Show } from '../../models/show';
 import { Episode } from '../../models/episode';
 
 import { TVMazeService } from '../../services/tvmaze.service';
+import {Person} from "../../models/person";
 
 @Component({
   selector: 'app-cast-credits',
@@ -12,35 +13,34 @@ import { TVMazeService } from '../../services/tvmaze.service';
 })
 export class CastCreditsComponent implements OnInit {
 
-  selectedEpisode: Episode;
-  currentShow: Show;
-  episodesList: Episode[];
+  currentPerson: Person;
+  selectedShow: Show;
+  showsList: Show[];
 
   @ViewChild('episodesContainer') listDisplay: ElementRef;
 
 
-  constructor(
-    private tvMazeService: TVMazeService) { }
+  constructor(private tvMazeService: TVMazeService) { }
 
 
   ngOnInit(): void {
     // get notified when the current show changes
-    this.tvMazeService.currentShow.subscribe(show => this.updateEpisodeList(show));
+    this.tvMazeService.currentPerson.subscribe(person => this.updateCastList(person));
   }
 
-  updateEpisodeList(show: Show) {
+  updateCastList(person: Person) {
     // empty the existing episodes-list list
-    this.episodesList = [];
+    this.showsList = [];
 
     // reset the selected episode back to nothing...which removes the blue highlighting of a selected episode
-    this.selectedEpisode = null;
+    this.selectedShow = null;
 
     // set the show to the newly selected one
-    this.currentShow = show;
+    this.currentPerson = person;
 
     // if the show has episodes-list loaded, then fill the episode list
-    if (this.currentShow && this.currentShow._embedded && this.currentShow._embedded.episodes) {
-      this.episodesList = show._embedded.episodes;
+    if (this.currentPerson && this.currentPerson._embedded && this.currentPerson._embedded.shows) {
+      this.showsList = person._embedded.shows;
     }
 
     // scroll the list of episodes-list back to the top of the list for newly selected show
@@ -50,10 +50,10 @@ export class CastCreditsComponent implements OnInit {
 
   }
 
-  onSelect(episode: Episode): void {
-    if (!this.selectedEpisode || episode.id !== this.selectedEpisode.id) {
-      this.selectedEpisode = episode;
-      this.tvMazeService.changeCurrentEpisode(episode); // notify service that episode has been changed
+  onSelect(show: Show): void {
+    if (!this.selectedShow || show.id !== this.selectedShow.id) {
+      this.selectedShow = show;
+      this.tvMazeService.changeCurrentShow(show); // notify service that episode has been changed
                                                         // so that any component that has subscribed will be notified
     }
   }

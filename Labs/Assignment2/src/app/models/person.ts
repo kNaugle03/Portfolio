@@ -3,6 +3,10 @@
 
 // this definition may need to be expanded on depending on whether we start loading embedded data
 
+import {Show} from "./show";
+import {CastMember} from "./castmember";
+import {CrewMember} from "./crewmember";
+
 export class Person {
   id: number;
   url: string;
@@ -15,5 +19,10 @@ export class Person {
     self: {
       href: string;
     }
+  };
+  _embedded: {
+    shows: Show[];
+    cast: CastMember[];
+    crew: CrewMember[];
   };
 }
