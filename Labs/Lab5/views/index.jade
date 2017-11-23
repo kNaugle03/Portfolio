@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Builtin module: #{modules}
+  br
+  p These are the the validator examples
+  p 1: Is valid email: foo.bar = #{valid1}
+  p 2: Is valid email: jimmy@gmail.com = #{valid2}
+  p 3: 'This' is equal to 'That': #{thisthat}
+  br
+  p This is the is-builtin-module portion
+  footer Is builtin module: #{bool}
