@@ -5,7 +5,7 @@ var Restaurant = require('../models/restaurant');
 
 
 module.exports.index = function(req, res) {
-    Restaurant.find(function(err, restaurants) {
+    Restaurant.find().limit(100).exec(function(err, restaurants) {
         if (err)
             res.send(err);
         else
@@ -30,14 +30,14 @@ module.exports.update = function(req, res) {
         if (err)
             res.send(err);
 
-        restaurant.name = req.body.name;  // update the bears info
+        restaurant.name = req.body.name;  // update the restaurant info
 
         // save the restaurant
         restaurant.save(function(err) {
             if (err)
                 res.send(err);
             else
-                res.json({ message: 'Bear updated!' });
+                res.json({ message: 'Restaurant updated!' });
         });
 
     });
@@ -45,13 +45,32 @@ module.exports.update = function(req, res) {
 
 module.exports.store = function(req, res) {
 
-    var restaurant = new Restaurant();      // create a new instance of the Restaurant model
-    restaurant.name = req.body.name;  // set the restaurants name (comes from the request)
-    restaurant.building = req.body.building;
-    restaurant.coord = req.body.name;
-    restaurant.name = req.body.name;
-    restaurant.name = req.body.name;
-    restaurant.name = req.body.name;
+    const grade = [];
+    grade.push({
+       grade: req.body.grade,
+       score: req.body.score
+    });
+
+    var restaurant = new Restaurant({
+        address:{
+            building: req.body.building,
+            coord: req.body.coord,
+            street: req.body.street,
+            zipcode: req.body.zipcode
+        },
+        borough: req.body.borough,
+        cuisine: req.body.cuisine,
+        grades: { grades: grade },
+        name: req.body.name,
+        restaurant_id: req.body.restaurant_id
+
+    });      // create a new instance of the Restaurant model
+    // restaurant.name = req.body.name;  // set the restaurants name (comes from the request)
+    // restaurant.address = req.body.address;
+    // restaurant.borough = req.body.borough;
+    // restaurant.cuisine = req.body.cuisine;
+    // restaurant.grades = req.body.grades;
+    // restaurant.restaurant_id = req.body.restaurant_id;
 
     // save the restaurant and check for errors
     restaurant.save(function(err) {
@@ -65,8 +84,8 @@ module.exports.store = function(req, res) {
 
 module.exports.destroy = function(req, res) {
     Restaurant.remove({
-        _id: req.params.bear_id
-    }, function(err, bear) {
+        _id: req.params._id
+    }, function(err, restaurant) {
         if (err)
             res.send(err);
         else

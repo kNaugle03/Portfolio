@@ -11,7 +11,7 @@ module.exports.index = function(req, res) {
         else
             res.json(users);
     });
-}
+};
 
 module.exports.store = function(req, res) {
 
