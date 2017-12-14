@@ -9,6 +9,9 @@ body{
 }
 
 h1{
+    font-family: "Squada One", cursive;
+    color: white;
+    font-size: 68px;
     padding-top: 25px;
 }
 
@@ -17,11 +20,16 @@ h1{
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    margin-right: -0.25em;
+    margin-right: -0.5em;
 }
 
 .carousel-outer{
     padding-left: 15%;
+}
+
+.carousel-inner{
+    background-color: rgba(255,255,255,0.7);
+    margin-left: 0;
 }
 
 .carousel-indicators{
@@ -39,6 +47,35 @@ h1{
 .carousel-item .col-md-8{
     float: left;
     padding-right: 0;
+    height: 50%;
+}
+
+#employees{
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/employees_php.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#parrot{
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/parrot_coded.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+#mastermind{
+    z-index: 50;
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/mastermind.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .carousel-card{
@@ -49,7 +86,6 @@ h1{
     height: 100%;
     vertical-align: top;
     padding-top: 10%;
-    background-color: rgba(255,255,255, 0.7);
 }
 
 .carousel-card a{
