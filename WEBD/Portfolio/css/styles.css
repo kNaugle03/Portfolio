@@ -1,0 +1,198 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: 0;
+    padding-right: 0;
+    /*max-width: 150px;*/
+    background-image: url("../images/navbar.png");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.navbar-topper{
+    width: 100%;
+    height: 30%;
+    margin: 0 auto;
+    text-align: center;
+    background-position: top;
+}
+
+.main-nav{
+    height: 40%;
+}
+
+.social-nav{
+    height: 30%;
+}
+
+.img-main{
+    padding-right: 10%;
+}
+
+/* This is a trick I found to ensure middle aligned content */
+
+.main-content-wrapper{
+    text-align: left;
+    padding-left: 15%;
+}
+
+.main-content-wrapper:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.main-content{
+    display: inline-block;
+    vertical-align: middle;
+    /*width: 620px;*/
+}
+
+/* end trick */
+
+/* Content styles */
+
+.main-content .title {
+    font-family: 'Squada One', cursive;
+    letter-spacing: 2px;
+    font-size: 100px;
+    color: #ff000a;
+}
+
+.main-content h1{
+    font-family: 'Comfortaa', cursive;
+    font-size: 42px;
+    color: #616161;
+}
+
+.main-content p{
+    font-family: 'Comfortaa', cursive;
+    padding-left: 4px;
+    padding-right: 80px;
+    font-size: 25px;
+    color: #616161;
+}
+
+.main-content a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    margin-left: -35px;
+}
+
+.contact-button{
+    background-color: #ff000a;
+    color: white;
+    font-size: 30px;
+    padding: 6px;
+    width: 250px;
+    /* css gradient snippet */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4040), to(#ff000a));
+    background-image: -webkit-linear-gradient(top, #ff4040, #ff000a);
+    background-image: -moz-linear-gradient(top, #ff4040, #ff000a);
+    background-image: -ms-linear-gradient(top, #ff4040, #ff000a);
+    background-image: -o-linear-gradient(top, #ff4040, #ff000a);
+    background-image: linear-gradient(to bottom, #ff4040, #ff000a);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff4040, endColorstr=#ff000a);
+}
+
+.contact-button:hover{
+    cursor: pointer;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cc2229), to(#ff000a));
+    background-image: -webkit-linear-gradient(top, #cc2229, #ff000a);
+    background-image: -moz-linear-gradient(top, #cc2229, #ff000a);
+    background-image: -ms-linear-gradient(top, #cc2229, #ff000a);
+    background-image: -o-linear-gradient(top, #cc2229, #ff000a);
+    background-image: linear-gradient(to bottom, #cc2229, #ff000a);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cc2229, endColorstr=#ff000a);
+}
+
+/* Icon Styles */
+
+.icon-lg{
+    margin: 0 auto;
+    width: 35%;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+}
+
+.icon-sm{
+    margin: 0 auto;
+    height: 36px;
+    width: 50%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+
+/*Main Nav*/
+#home-button{
+    background-image: url("../images/home_icon_lg.png");
+}
+
+#projects-button{
+    margin-top: 7%;
+    background-image: url("../images/work_icon_lg.png");
+    margin-right: 18%;
+    height: 55px;
+    width: 65px;
+    background-size: contain;
+}
+
+#contact-button{
+    background-image: url("../images/contact_icon_lg.png");
+}
+
+/*Social Links*/
+#tumblr-icon{
+    background-image: url("../images/tumblr_icon.png");
+}
+
+#github-icon{
+    background-image: url("../images/github_icon.png");
+}
+
+#facebook-icon{
+    background-image: url("../images/facebook_icon.png");
+}
+
+#linkedin-icon{
+    background-image: url("../images/linkedin_icon.png");
+}
+
+/* UTILITY CLASSES HERE  */
+
+.h-33{
+    height: 33.33%;
+}
+
+/* PARTICLE JS STYLES */
+
+.particle-bg {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
