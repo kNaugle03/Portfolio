@@ -1,0 +1,69 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('../images/main-bg.png');
+    bottom: 0;
+    padding: 25px 0;
+}
+
+.content-wrapper{
+    padding-left: 10%;
+}
+
+.image-column{
+    text-align: center;
+}
+
+.image-column img{
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.writeup-column{
+    display: inline-block;
+    float: right;
+    background-color: rgba(255,255,255,0.65);
+    padding: 25px;
+    margin-bottom: 25px;
+    color: #616161;
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+
+}
+
+.writeup-title{
+    font-family: "Squada One", cursive;
+    color: #ff000a;
+    text-align: center;
+}
+
+.writeup-column ul{
+    list-style-image: url("../images/code-icon.png");
+}
+
+.writeup-column .skills{
+    font-family: 'Comfortaa', cursive;
+
+}
+
+.writeup-column h1{
+    font-size: 48px;
+}
+
+.writeup-column h3{
+    font-size: 36px;
+}
+
+.writeup-column p{
+    margin-bottom: 20px;
+}
+
+.writeup-column a{
+    display: block;
+    width: 100%;
+    text-align: center;
+}

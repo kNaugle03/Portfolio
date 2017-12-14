@@ -99,7 +99,7 @@ html, body{
     color: white;
     font-size: 30px;
     padding: 6px;
-    width: 250px;
+    min-width: 250px;
     /* css gradient snippet */
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4040), to(#ff000a));
     background-image: -webkit-linear-gradient(top, #ff4040, #ff000a);
@@ -152,9 +152,9 @@ html, body{
 #projects-button{
     margin-top: 7%;
     background-image: url("../images/work_icon_lg.png");
-    margin-right: 18%;
+    margin-right: 20%;
     height: 55px;
-    width: 65px;
+    width: 60px;
     background-size: contain;
 }
 

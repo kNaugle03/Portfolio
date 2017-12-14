@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: "DejaVu Sans";
+}
+
+/* HEADER STYLES */
+header{
+    background-image: url('images/file0001996933684.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+    margin: 0;
+}
+
+#heroText{
+    padding-top: 200px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#heroText h1{
+    font-size: 84px;
+}
+
+#heroText h2{
+    font-size: 36px;
+}
+
+#heroText h1, h2{
+    color: #AC2F1F;
+}
+
+#parrotLogo{
+    text-transform: uppercase;
+    float: left;
+    padding-left: 20%;
+    padding-top: 75px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav{
+    float: right;
+    padding-right: 16%;
+    padding-top: 75px;
+    font-size: 16px;
+}
+
+header nav ul, li{
+    font-weight: bold;
+    list-style: none;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+header nav ul, li:last-child{
+    margin-right: 0;
+}
+
+header nav ul, li > a{
+    text-decoration: none;
+    color: black;
+}
+
+.active{
+    color: #EA6834;
+}
+
+
+header nav ul, li > a:hover{
+    color: #EA6834;
+}
+
+/* PHOTO CONTEST STYLES */
+
+#photoContest-wrapper{
+    height: 300px;
+    background-color: #EA6834;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#photoContest-content{
+    max-width: 1140px;
+    margin: 0 auto;
+    /*text-align: center;*/
+}
+
+#photoContest-content h2,#photoContest-content p{
+    text-align: center;
+    color: #fff;
+}
+
+#photoContest-content h2{
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+#photoContest-content p{
+    margin-bottom: 40px;
+    width: 700px;
+    line-height: 1.4;
+    font-size: 18px;
+}
+
+#photoContest-content a{
+    width: 190px;
+    margin: 0 auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#photoContest-button{
+    width: 150px;
+    color: #000;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 8px 20px;
+}
+
+/* ACCOLADES SECTION STYLES */
+
+#accolades-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 75px 0 50px 0;*/
+}
+
+#accolades-content{
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+    color: #000;
+}
+
+#accolades-content h2{
+    color: #000;
+    font-size: 24px;
+    margin-top: 100px;
+    margin-bottom: 75px;
+}
+
+#callout-icons{
+    width: 100%;
+}
+
+.icon{
+    width: 23%;
+    display: inline-block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.icon h3{
+    font-weight: normal;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.icon p{
+    padding: 0 19px;
+}
+
+/* CTA SECTION STYLES */
+
+#cta-wrapper{
+    width: 100%;
+    display: table;
+}
+
+.cta-content-row1, .cta-content-row2{
+    width: 100%;
+    color: white;
+    text-align: center;
+    text-shadow: 4px 5px 5px rgba(25,25,25,0.6);
+}
+
+.cta-content-row1 h2, .cta-content-row2 h2{
+    color: white;
+}
+
+.cta{
+    display: inline-block;
+    width: 33.33%;
+    height: 342px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: -5px;
+}
+
+.cta a{
+    text-decoration: none;
+    color: white;
+}
+
+.cta-text:hover{
+    text-decoration: underline;
+    cursor: url('images/hover-1.png'), auto;
+}
+
+
+.cta-text{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 50%;
+    margin-left: -50%;
+    line-height: 1.3;
+}
+
+.cta-text h4{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.cta-text h2{
+    font-size: 36px;
+}
+
+
+/* APPLYING BACKGROUND IMAGES - WISH I HAD SCSS RIGHT NOW */
+
+#cta1{
+    background-image: url("images/parrots_1.jpg");
+}
+
+#cta2{
+    background-image: url("images/parrots_2.jpg");
+}
+
+#cta3{
+    background-image: url("images/parrots_3.jpg");
+}
+
+#cta4{
+    background-image: url("images/parrots_4.jpg");
+}
+
+#cta5{
+    background-image: url("images/parrots_5.jpg");
+}
+
+#cta6{
+    background-image: url("images/parrots_6.jpg");
+}
+
+
+/* FOOTER STYLES */
+
+footer{
+    padding-top: 10px;
+    color: white;
+    background-color: #EA6834;
+    text-align: center;
+    font-size: 12px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a{
+    color: white;
+}
