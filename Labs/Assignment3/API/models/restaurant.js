@@ -4,13 +4,14 @@ var Schema       = mongoose.Schema;
 var RestaurantSchema = new Schema({
     address: {
         building: String,
-        coord: {type: [Number], min: -180, max: 180},
+        coord: [Number],
         street: String,
         zipcode: String
     },
     borough: String,
     cuisine: String,
     grades: [{
+        _id: false,
         date: {type: Date, default: Date.now},
         grade: String,
         score: Number

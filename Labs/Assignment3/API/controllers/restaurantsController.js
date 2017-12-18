@@ -45,22 +45,19 @@ module.exports.update = function(req, res) {
 
 module.exports.store = function(req, res) {
 
-    const grade = [];
-    grade.push({
-       grade: req.body.grade,
-       score: req.body.score
-    });
-
+    var grade = {grade: req.body.grade, date: {type: Date, default: Date.now()}, score: req.body.score};
+    const grades = [grade];
+    grades.push(grade);
     var restaurant = new Restaurant({
         address:{
             building: req.body.building,
-            coord: req.body.coord,
+            coord: req.body.coord.castToNumber,
             street: req.body.street,
             zipcode: req.body.zipcode
         },
         borough: req.body.borough,
         cuisine: req.body.cuisine,
-        grades: { grades: grade },
+        grades: [grades],
         name: req.body.name,
         restaurant_id: req.body.restaurant_id
 
